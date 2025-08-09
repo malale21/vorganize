@@ -1,6 +1,0 @@
-"tv-shows" [ "squid game",
-	"forever" 
-	"prison break"
-
-
-]
