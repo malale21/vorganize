@@ -2,3 +2,4 @@
 *.bak
 test.py
 test2.py
+vorganize/__pycache__/
