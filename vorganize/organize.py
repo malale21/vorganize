@@ -17,7 +17,6 @@ def prepare_lists(filename, path, series_dict, movies, other_videos, series_patt
     if series_pattern.search(filename):
         series_title, season_number = extract_series_title(filename, series_pattern)
         if series_title:
-            print(season_number)
             series_title = series_title.replace('.', ' ')
             series_dict[series_title][season_number].append((filename, subtitle_file))
             store_as_json("s", (series_title, season_number, filename), shows_json)

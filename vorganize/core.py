@@ -2,9 +2,10 @@ from pathlib import Path
 import re
 import logging
 
+common_subtitle_exts = ["srt", "sub", "idx", "ssa", "ass", "vtt", "smi", "sami", "stl"]
 logger = logging.getLogger(__name__)
 
-def find_subtitle(filename, path, common_subtitle_exts):
+def find_subtitle(filename, path, common_subtitle_exts=common_subtitle_exts):
     """Find a subtitle file for the given video filename."""
     base_name = '.'.join(filename.split('.')[:-1])  # Remove the extension
     for ext in common_subtitle_exts:
