@@ -49,7 +49,9 @@ def main(path, dest_dir, interactive, script_dir="/home/malale/.local/movies_scr
     # File patterns and subtitle extensions
     video_ext = ['mp4', 'avi', 'mkv', 'mov', 'wmv']
     common_subtitle_exts = ["srt", "sub", "idx", "ssa", "ass", "vtt", "smi", "sami", "stl"]
+    #series_pattern = re.compile(r"^(?P<title>.+?)\s*(?:S|Season\s*)(\d{1,2})(?:E|Episode\s*|\.|-|x)\d{1,2}", re.IGNORECASE)
     series_pattern = re.compile(r"(?i)(?:S|Season\s*)(\d{1,2})(?:E|Episode\s*|\.|-|x)\d{1,2}", re.IGNORECASE)
+    series_pattern2 = re.compile(r'.+ S\d{2} E\d{2}\s+@Series_index_x\.mkv', re.IGNORECASE)
     movie_pattern = re.compile(r".*\(\d{4}\).*", re.IGNORECASE)
     movie_pattern2 = re.compile(r'^[\w\s\-\.]+?\.\d{4}\.?(?:720p|1080p)?\.?(?:BluRay|WEBRip|WEB-DL|BrRip)?\.?(?:x264|x265|HEVC|AAC)?\.?(?:6CH|DDP5\.1|10bit)?\.?(?:[\w\-\.\[\]]+)?\.(?:mkv|mp4)$')
     movie_pattern3 = re.compile(r'^[\w\s\-\.]+_\d{4}_[\w\-\.]+?\.(?:mkv|mp4)$')
@@ -74,7 +76,7 @@ def main(path, dest_dir, interactive, script_dir="/home/malale/.local/movies_scr
     logger.info(f"Scanning directory: {path}", extra={"indent": 0})
     for item in path.iterdir():
         if item.is_file() and item.suffix[1:].lower() in video_ext:
-            prepare_lists(item.name, path, series_dict, movies, other_videos, series_pattern, movie_pattern, movie_pattern2, movie_pattern3, common_subtitle_exts, shows_json, movies_json, other_videos_json)
+            prepare_lists(item.name, path, series_dict, movies, other_videos, series_pattern, movie_pattern, movie_pattern2, movie_pattern3, common_subtitle_exts, shows_json, movies_json, other_videos_json, series_pattern2)
 
     # Sort lists
     for series_title in series_dict:
