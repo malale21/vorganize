@@ -5,16 +5,16 @@ Features
 
 ## Automatic Sorting:
 
-Organizes video files into:
-## TV Shows: Groups episodes by series and season (e.g., shows/Breaking Bad/Season 1/Breaking Bad S01E01.mkv).
-## Movies: Places movies in a dedicated folder (e.g., Movies/Inception (2010).mp4).
-## Other Videos: Stores miscellaneous videos in a separate directory (e.g., other_videos/RandomVideo.mp4).
+## Organizes video files into:
+TV Shows: Groups episodes by series and season (e.g., shows/Breaking Bad/Season 1/Breaking Bad S01E01.mkv).
+Movies: Places movies in a dedicated folder (e.g., Movies/Inception (2010).mp4).
+Other Videos: Stores miscellaneous videos in a separate directory (e.g., other_videos/RandomVideo.mp4).
 
 
 ## Recognizes common naming conventions (e.g., S01E01, Season 01 Episode 01, 1x01, Movie (2020)).
 
 
-## Subtitle Handling:
+### Subtitle Handling:
 
 Detects and moves subtitle files (.srt, .sub, .vtt, etc.) alongside their corresponding videos.
 Renames subtitles to match renamed videos in interactive mode.
@@ -68,7 +68,7 @@ Supports resuming by skipping already processed files.
 }
 ```
 
-## Colored Logging:
+### Colored Logging:
 
 Uses colorama for colorful, indented console output:
 Green for success/info.
